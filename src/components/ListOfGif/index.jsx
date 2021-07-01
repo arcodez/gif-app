@@ -1,27 +1,25 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment } from "react";
 import { useGetGifs } from "../../hooks/useGetGifs";
 import { Gif } from "../Gif";
-import "./style.css";
+import { Buscador, ContenedorImagenes, Input, Linea, Spinner } from "./style";
 
 export function ListOfGif() {
   const { loading, gifs, searchTerm, handleChange } = useGetGifs(undefined);
   return (
     <Fragment>
-      <div className="buscador">
-        <input type="text" value={searchTerm} onChange={handleChange} />
-      </div>
-      <div className="linea"></div>
-      <div className="contenedor-imagenes">
+      <Buscador>
+        <Input type="text" value={searchTerm} onChange={handleChange} />
+      </Buscador>
+
+      <Linea />
+
+      <ContenedorImagenes>
         {loading ? (
-          <p>cargando</p>
+          <Spinner />
         ) : (
-          gifs.map((g, index) => (
-            <Fragment key={g.id}>
-              <Gif index={index} g={g} />
-            </Fragment>
-          ))
+          gifs.map((g, index) => <Gif key={g.id} index={index} g={g} />)
         )}
-      </div>
+      </ContenedorImagenes>
     </Fragment>
   );
 }

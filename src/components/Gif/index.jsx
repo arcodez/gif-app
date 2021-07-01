@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
-import "./style.css";
+import { Imagen, Overlay } from "./style";
 
 export function Gif({ g = {}, index = 0 }) {
   return (
-    <div className="imagen">
+    <Imagen>
       <img src={g.images.downsized_medium.url} alt={g.title} />
-      <div className="overlay">
+      <Overlay>
         <h2>{g.title}</h2>
-      </div>
-    </div>
+      </Overlay>
+    </Imagen>
   );
 }
