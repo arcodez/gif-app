@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Imagen } from "../Gif/style";
 
 export const Spinner = styled.div`
   border: 4px solid rgba(0, 0, 0, 0.1);
@@ -27,15 +28,17 @@ export const ContenedorImagenes = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
   border-radius: 3px;
-`;
 
-export const Imagen = styled.div`
-  width: 32%;
-  position: relative;
-  height: 250px;
-  margin-bottom: 5px;
-  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
-  border-radius: var(--border);
+  @media (max-width: 1000px) {
+    width: 95%;
+  }
+
+  @media (max-width: 700px) {
+    width: 90%;
+    ${Imagen} {
+      width: 48%;
+    }
+  }
 `;
 
 export const Buscador = styled.div`
