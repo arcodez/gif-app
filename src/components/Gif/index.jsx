@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Imagen, Overlay } from "./style";
 
 export function Gif({ g = {}, index = 0 }) {
