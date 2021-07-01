@@ -3,9 +3,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --text-color: #fff;
+  --border: 20px;
+}
+
+body {
+  color: var(--text-color);
+  background: #353231;
+}
 
 .galeria {
   font-family: "open sans";
+}
+
+input[type="text"] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("https://www.w3schools.com/css/searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 100%;
 }
 
 .galeria h1 {
@@ -34,8 +61,10 @@
   height: 250px;
   margin-bottom: 5px;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+  border-radius: var(--border);
 }
 .imagen img {
+  border-radius: var(--border);
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -49,11 +78,12 @@
   width: 100%;
   height: 0;
   overflow: hidden;
+  border-radius: var(--border);
   transition: 0.5s ease;
 }
 
 .overlay h2 {
-  color: #fff;
+  color: var(--text-color);
   font-weight: 300;
   font-size: 30px;
   position: absolute;
